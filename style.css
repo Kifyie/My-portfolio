@@ -58,17 +58,15 @@ input, textarea, select {
     cursor: url('Normal.cur'), default !important;
 }
 
-/* RESPONSIVE BODY - No scroll on desktop, scroll on mobile */
 body {
     font-family: 'Inter', sans-serif;
     background: #0a0a0f;
     color: #ffffff;
-    /* Desktop: No scroll */
-    overflow: hidden;
+    overflow: hidden; /* NO SCROLL ON ANY DEVICE */
     height: 100vh;
 }
 
-/* Video Background - FILLS SCREEN */
+/* Video Background */
 .video-container {
     position: fixed;
     top: 0;
@@ -174,7 +172,7 @@ body {
 .snowflake:nth-child(6) {
     left: 55%;
     animation-duration: 7s;
-    animation-delay: 0s;
+    animation-delay: 0.5s;
     background: #ff5722;
 }
 
@@ -494,16 +492,15 @@ body {
     }
 }
 
-/* FIXED RESPONSIVE Main Content */
+/* MAIN CONTENT - FITS ALL DEVICES */
 .main-content {
-    /* Desktop: Fixed height, centered */
     height: 100vh;
-    padding: clamp(15px, 3vw, 30px);
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: clamp(20px, 4vw, 40px);
+    gap: 40px;
     position: relative;
     z-index: 10;
     max-width: 1200px;
@@ -511,20 +508,20 @@ body {
     overflow: hidden;
 }
 
-/* Header Title - RESPONSIVE SIZING */
+/* Header Title */
 .clean-header {
     text-align: center;
     flex-shrink: 0;
 }
 
 .clean-header .main-title {
-    font-size: clamp(2.5rem, 8vw, 6rem); /* BETTER RESPONSIVE SCALING */
+    font-size: clamp(3.5rem, 9vw, 6rem);
     font-weight: 700;
     background: linear-gradient(135deg, #ff9a56, #ff6b35, #ff4757);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: clamp(8px, 2vw, 12px);
+    margin-bottom: 12px;
     opacity: 0;
     transform: translateX(-100px);
     animation: slideInLeft 1s ease-out 0.5s 1 forwards;
@@ -533,13 +530,13 @@ body {
 }
 
 .clean-header .subtitle {
-    font-size: clamp(1rem, 3vw, 1.8rem); /* BETTER RESPONSIVE SCALING */
+    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
     color: rgba(255, 255, 255, 0.8);
     font-weight: 300;
     opacity: 0;
     transform: translateX(100px);
     animation: slideInRight 1s ease-out 0.8s 1 forwards;
-    margin-bottom: clamp(10px, 2vw, 15px);
+    margin-bottom: 15px;
 }
 
 .title-underline {
@@ -567,37 +564,36 @@ body {
 
 @keyframes expandLine {
     to {
-        width: clamp(150px, 20vw, 200px); /* RESPONSIVE LINE */
+        width: 200px;
     }
 }
 
-/* FLEXIBLE Bottom Panels Container */
+/* Bottom Panels Container */
 .bottom-panels {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(15px, 3vw, 25px);
+    gap: 25px;
     width: 100%;
     max-width: 1000px;
     flex-shrink: 0;
 }
 
-/* FLEXIBLE Panels - ADAPT TO SCREEN */
+/* Panels */
 .panel {
     background: rgba(255, 154, 86, 0.1);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 154, 86, 0.2);
     border-radius: 16px;
-    padding: clamp(15px, 3vw, 25px);
+    padding: 25px;
     box-shadow: 0 6px 24px rgba(255, 107, 53, 0.2);
     transition: all 0.3s ease;
     
     opacity: 0;
     transform: translateY(80px) scale(0.8);
     
-    /* FLEXIBLE HEIGHT - Adapts to screen */
     height: auto;
-    min-height: clamp(280px, 35vh, 320px); /* RESPONSIVE HEIGHT */
-    max-height: clamp(280px, 35vh, 320px);
+    min-height: 320px;
+    max-height: 320px;
     
     display: flex;
     flex-direction: column;
@@ -646,9 +642,9 @@ body {
 }
 
 .panel-title {
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: clamp(10px, 2vw, 14px);
+    margin-bottom: 14px;
     color: #ff9a56;
     flex-shrink: 0;
 }
@@ -656,9 +652,9 @@ body {
 .about-text {
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: clamp(8px, 2vw, 12px);
+    margin-bottom: 12px;
     flex: 1;
-    font-size: clamp(0.8rem, 1.8vw, 0.88rem);
+    font-size: 0.88rem;
     overflow: hidden;
 }
 
@@ -666,9 +662,9 @@ body {
 .skills {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(4px, 1vw, 6px);
+    gap: 6px;
     margin-top: auto;
-    margin-bottom: clamp(6px, 1.5vw, 8px);
+    margin-bottom: 8px;
     flex-shrink: 0;
 }
 
@@ -676,9 +672,9 @@ body {
 .skill-tag {
     background: rgba(255, 154, 86, 0.35);
     border: 1.5px solid #ff9a56;
-    padding: clamp(3px, 1vw, 4px) clamp(6px, 1.5vw, 8px);
+    padding: 4px 8px;
     border-radius: 12px;
-    font-size: clamp(0.68rem, 1.5vw, 0.75rem);
+    font-size: 0.75rem;
     color: #ffb366;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -695,7 +691,7 @@ body {
 
 /* Jack of Trades Text */
 .jack-of-trades {
-    font-size: clamp(0.65rem, 1.4vw, 0.72rem);
+    font-size: 0.72rem;
     color: rgba(255, 255, 255, 0.6);
     text-align: center;
     font-style: italic;
@@ -710,25 +706,25 @@ body {
 .spotify-player {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 12px;
-    padding: clamp(12px, 2.5vw, 16px);
+    padding: 16px;
     border: 1px solid rgba(255, 154, 86, 0.1);
     flex: 1;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    gap: clamp(8px, 2vw, 12px);
+    gap: 12px;
 }
 
 .track-info {
     display: flex;
     align-items: center;
-    gap: clamp(8px, 2vw, 12px);
+    gap: 12px;
     flex-shrink: 0;
 }
 
 .track-cover {
-    width: clamp(45px, 8vw, 52px);
-    height: clamp(45px, 8vw, 52px);
+    width: 52px;
+    height: 52px;
     background: linear-gradient(135deg, #ff9a56, #ff6b35);
     border-radius: 8px;
     display: flex;
@@ -749,8 +745,8 @@ body {
 }
 
 .play-button svg {
-    width: clamp(16px, 3vw, 20px);
-    height: clamp(16px, 3vw, 20px);
+    width: 20px;
+    height: 20px;
     fill: white;
     transition: all 0.3s ease;
 }
@@ -764,7 +760,7 @@ body {
     font-weight: 600;
     color: white;
     margin-bottom: 3px;
-    font-size: clamp(0.8rem, 1.7vw, 0.9rem);
+    font-size: 0.9rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -772,7 +768,7 @@ body {
 
 .track-artist {
     color: rgba(255, 255, 255, 0.7);
-    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+    font-size: 0.8rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -780,7 +776,7 @@ body {
 
 /* Motivational Section */
 .motivational-section {
-    padding: clamp(8px, 2vw, 10px);
+    padding: 10px;
     background: rgba(255, 154, 86, 0.05);
     border-radius: 8px;
     border-left: 2px solid #ff9a56;
@@ -788,7 +784,7 @@ body {
 }
 
 .motivational-text {
-    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+    font-size: 0.8rem;
     line-height: 1.3;
     color: rgba(255, 255, 255, 0.8);
     font-style: italic;
@@ -817,7 +813,7 @@ body {
     height: 4px;
     border-radius: 2px;
     overflow: hidden;
-    margin-bottom: clamp(6px, 1.5vw, 8px);
+    margin-bottom: 8px;
 }
 
 .progress-fill {
@@ -834,8 +830,8 @@ body {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: clamp(6px, 1.5vw, 8px);
-    height: clamp(6px, 1.5vw, 8px);
+    width: 8px;
+    height: 8px;
     background: white;
     border-radius: 50%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -844,7 +840,7 @@ body {
 .time-display {
     display: flex;
     justify-content: space-between;
-    font-size: clamp(0.65rem, 1.4vw, 0.72rem);
+    font-size: 0.72rem;
     color: rgba(255, 255, 255, 0.7);
     font-family: 'JetBrains Mono', monospace;
 }
@@ -852,7 +848,7 @@ body {
 /* Social Buttons */
 .social-buttons {
     display: flex;
-    gap: clamp(10px, 2.5vw, 15px);
+    gap: 15px;
     flex-direction: column;
     margin-top: auto;
     flex: 1;
@@ -862,18 +858,18 @@ body {
 .social-btn {
     display: flex;
     align-items: center;
-    gap: clamp(8px, 2vw, 12px);
-    padding: clamp(14px, 3vw, 18px) clamp(16px, 3.5vw, 22px);
+    gap: 12px;
+    padding: 18px 22px;
     background: rgba(255, 154, 86, 0.1);
     border: 1px solid rgba(255, 154, 86, 0.2);
     border-radius: 12px;
     text-decoration: none;
     color: white;
     font-weight: 500;
-    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    font-size: 1.05rem;
     transition: all 0.3s ease;
     justify-content: center;
-    min-height: clamp(50px, 8vw, 60px);
+    min-height: 60px;
 }
 
 .social-btn:hover {
@@ -892,8 +888,8 @@ body {
 }
 
 .social-btn svg {
-    width: clamp(20px, 4vw, 24px);
-    height: clamp(20px, 4vw, 24px);
+    width: 24px;
+    height: 24px;
     fill: currentColor;
     flex-shrink: 0;
 }
@@ -902,131 +898,195 @@ body {
     display: none;
 }
 
-/* LAPTOP/TABLET RESPONSIVE (1024px to 768px) */
-@media (max-width: 1024px) {
-    .main-content {
-        gap: clamp(15px, 3vw, 30px);
-        padding: clamp(15px, 2.5vw, 25px);
-    }
-    
-    .bottom-panels {
-        max-width: 900px;
-        gap: clamp(12px, 2.5vw, 20px);
-    }
-    
-    .panel {
-        min-height: clamp(260px, 32vh, 300px);
-        max-height: clamp(260px, 32vh, 300px);
-    }
-}
-
-/* TABLET RESPONSIVE (768px and below) */
-@media (max-width: 768px) {
-    .main-content {
-        gap: clamp(20px, 4vw, 30px);
-        padding: clamp(20px, 4vw, 25px);
-    }
-    
-    .bottom-panels {
-        grid-template-columns: 1fr;
-        gap: clamp(15px, 3vw, 20px);
-        max-width: 400px;
-    }
-    
-    .panel {
-        min-height: clamp(240px, 30vh, 280px);
-        max-height: clamp(240px, 30vh, 280px);
-        padding: clamp(15px, 3vw, 20px);
-    }
-    
-    .spotify-player {
-        gap: clamp(8px, 2vw, 10px);
-    }
-    
-    .border-corner {
-        width: 25px;
-        height: 25px;
-    }
-    
-    .border-line.top,
-    .border-line.bottom {
-        left: 45px;
-        right: 45px;
-    }
-    
-    .border-line.left,
-    .border-line.right {
-        top: 45px;
-        bottom: 45px;
-    }
-}
-
-/* MOBILE RESPONSIVE (480px and below) - SCROLLING ENABLED */
+/* MOBILE COMPACT DESIGN - EVERYTHING FITS IN VIEWPORT */
 @media (max-width: 480px) {
-    /* ENABLE SCROLLING ON MOBILE */
-    body {
-        overflow-y: auto !important; /* ENABLE SCROLL ON MOBILE */
-        height: auto !important;
-    }
-    
     .main-content {
-        height: auto !important; /* REMOVE FIXED HEIGHT */
-        min-height: 100vh;
-        justify-content: flex-start !important; /* START FROM TOP */
-        padding: clamp(20px, 5vw, 30px) clamp(15px, 4vw, 20px);
-        gap: clamp(25px, 6vw, 35px);
-        overflow: visible !important; /* ALLOW OVERFLOW */
+        height: 100vh; /* KEEP FIXED HEIGHT */
+        padding: 10px;
+        gap: 15px; /* MUCH SMALLER GAP */
+        justify-content: space-between; /* DISTRIBUTE EVENLY */
     }
     
+    /* COMPACT HEADER */
     .clean-header {
-        margin-bottom: clamp(20px, 5vw, 30px);
+        flex-shrink: 0;
+        margin-bottom: 0;
     }
     
+    .clean-header .main-title {
+        font-size: 2.2rem; /* SMALLER TITLE */
+        margin-bottom: 5px;
+    }
+    
+    .clean-header .subtitle {
+        font-size: 0.9rem; /* SMALLER SUBTITLE */
+        margin-bottom: 8px;
+    }
+    
+    .title-underline {
+        margin-bottom: 0;
+    }
+    
+    /* SINGLE COLUMN MOBILE LAYOUT */
     .bottom-panels {
-        grid-template-columns: 1fr;
-        gap: clamp(20px, 5vw, 25px);
-        max-width: 100%;
+        grid-template-columns: 1fr; /* SINGLE COLUMN */
+        gap: 10px; /* TINY GAP */
         width: 100%;
+        max-width: none;
+        flex: 1; /* TAKE REMAINING SPACE */
     }
     
+    /* ULTRA COMPACT PANELS */
     .panel {
-        min-height: auto !important; /* REMOVE FIXED HEIGHT */
-        max-height: none !important;
-        padding: clamp(20px, 5vw, 25px);
+        min-height: auto; /* REMOVE FIXED HEIGHT */
+        max-height: none;
+        padding: 12px; /* SMALL PADDING */
+        flex: 1; /* EQUAL HEIGHT DISTRIBUTION */
+        max-height: calc((100vh - 150px) / 3); /* DIVIDE REMAINING SPACE BY 3 */
     }
     
-    /* Hide border on mobile for cleaner look */
+    /* COMPACT PANEL CONTENT */
+    .panel-title {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .about-text {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+    
+    /* SMALLER SKILL TAGS */
+    .skills {
+        gap: 4px;
+        margin-bottom: 6px;
+    }
+    
+    .skill-tag {
+        padding: 2px 6px;
+        font-size: 0.65rem;
+    }
+    
+    .jack-of-trades {
+        font-size: 0.6rem;
+        padding-top: 3px;
+    }
+    
+    /* COMPACT MUSIC PLAYER */
+    .spotify-player {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .track-info {
+        gap: 8px;
+    }
+    
+    .track-cover {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .play-button svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .track-name {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+    }
+    
+    .track-artist {
+        font-size: 0.7rem;
+    }
+    
+    .motivational-section {
+        padding: 8px;
+    }
+    
+    .motivational-text {
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+    
+    .time-display {
+        font-size: 0.65rem;
+    }
+    
+    /* COMPACT SOCIAL BUTTONS */
+    .social-buttons {
+        gap: 8px;
+    }
+    
+    .social-btn {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+        min-height: 40px;
+        gap: 8px;
+    }
+    
+    .social-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    /* HIDE DECORATIVE ELEMENTS ON MOBILE FOR SPACE */
     .border-corner,
     .border-line {
         display: none;
     }
     
-    /* Adjust particles for mobile */
-    .particles-container {
-        display: none; /* HIDE PARTICLES ON MOBILE FOR PERFORMANCE */
+    /* REDUCE PARTICLES ON MOBILE */
+    .particle:nth-child(n+5) {
+        display: none;
     }
     
-    .snowfall-container {
-        display: none; /* HIDE SNOWFALL ON MOBILE FOR PERFORMANCE */
+    .snowflake:nth-child(n+11) {
+        display: none;
     }
 }
 
-/* VERY SMALL MOBILE (360px and below) */
+/* VERY SMALL MOBILE - EVEN MORE COMPACT */
 @media (max-width: 360px) {
     .main-content {
-        padding: 15px 10px;
-        gap: 20px;
+        padding: 8px;
+        gap: 12px;
     }
     
     .clean-header .main-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .clean-header .subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .bottom-panels {
+        gap: 8px;
+    }
+    
+    .panel {
+        padding: 10px;
+        max-height: calc((100vh - 130px) / 3);
+    }
+    
+    .panel-title {
         font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+    
+    .about-text {
+        font-size: 0.7rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.6rem;
+        padding: 2px 4px;
     }
     
     .jack-of-trades {
-        font-size: 0.6rem;
+        font-size: 0.55rem;
     }
 }

@@ -1,4 +1,10 @@
-/* CUSTOM CURSORS - Your cursor pack */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CUSTOM CURSORS */
 body, html {
     cursor: url('Normal.cur'), auto;
 }
@@ -52,17 +58,12 @@ input, textarea, select {
     cursor: url('Normal.cur'), default !important;
 }
 
-/* Precision cursor */
-.progress-fill::after {
-    cursor: url('Precision.cur'), crosshair !important;
-}
-
-
-
+/* RESPONSIVE BODY - No scroll on desktop, scroll on mobile */
 body {
     font-family: 'Inter', sans-serif;
     background: #0a0a0f;
     color: #ffffff;
+    /* Desktop: No scroll */
     overflow: hidden;
     height: 100vh;
 }
@@ -173,7 +174,7 @@ body {
 .snowflake:nth-child(6) {
     left: 55%;
     animation-duration: 7s;
-    animation-delay: 0.5s;
+    animation-delay: 0s;
     background: #ff5722;
 }
 
@@ -493,15 +494,16 @@ body {
     }
 }
 
-/* Main Content */
+/* FIXED RESPONSIVE Main Content */
 .main-content {
+    /* Desktop: Fixed height, centered */
     height: 100vh;
-    padding: 30px;
+    padding: clamp(15px, 3vw, 30px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: clamp(20px, 4vw, 40px);
     position: relative;
     z-index: 10;
     max-width: 1200px;
@@ -509,20 +511,20 @@ body {
     overflow: hidden;
 }
 
-/* Header Title */
+/* Header Title - RESPONSIVE SIZING */
 .clean-header {
     text-align: center;
     flex-shrink: 0;
 }
 
 .clean-header .main-title {
-    font-size: clamp(3.5rem, 9vw, 6rem);
+    font-size: clamp(2.5rem, 8vw, 6rem); /* BETTER RESPONSIVE SCALING */
     font-weight: 700;
     background: linear-gradient(135deg, #ff9a56, #ff6b35, #ff4757);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 12px;
+    margin-bottom: clamp(8px, 2vw, 12px);
     opacity: 0;
     transform: translateX(-100px);
     animation: slideInLeft 1s ease-out 0.5s 1 forwards;
@@ -531,13 +533,13 @@ body {
 }
 
 .clean-header .subtitle {
-    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+    font-size: clamp(1rem, 3vw, 1.8rem); /* BETTER RESPONSIVE SCALING */
     color: rgba(255, 255, 255, 0.8);
     font-weight: 300;
     opacity: 0;
     transform: translateX(100px);
     animation: slideInRight 1s ease-out 0.8s 1 forwards;
-    margin-bottom: 15px;
+    margin-bottom: clamp(10px, 2vw, 15px);
 }
 
 .title-underline {
@@ -565,36 +567,37 @@ body {
 
 @keyframes expandLine {
     to {
-        width: 200px;
+        width: clamp(150px, 20vw, 200px); /* RESPONSIVE LINE */
     }
 }
 
-/* Bottom Panels Container */
+/* FLEXIBLE Bottom Panels Container */
 .bottom-panels {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: clamp(15px, 3vw, 25px);
     width: 100%;
     max-width: 1000px;
     flex-shrink: 0;
 }
 
-/* Panels */
+/* FLEXIBLE Panels - ADAPT TO SCREEN */
 .panel {
     background: rgba(255, 154, 86, 0.1);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 154, 86, 0.2);
     border-radius: 16px;
-    padding: 25px;
+    padding: clamp(15px, 3vw, 25px);
     box-shadow: 0 6px 24px rgba(255, 107, 53, 0.2);
     transition: all 0.3s ease;
     
     opacity: 0;
     transform: translateY(80px) scale(0.8);
     
+    /* FLEXIBLE HEIGHT - Adapts to screen */
     height: auto;
-    min-height: 320px;
-    max-height: 320px;
+    min-height: clamp(280px, 35vh, 320px); /* RESPONSIVE HEIGHT */
+    max-height: clamp(280px, 35vh, 320px);
     
     display: flex;
     flex-direction: column;
@@ -643,9 +646,9 @@ body {
 }
 
 .panel-title {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     font-weight: 600;
-    margin-bottom: 14px;
+    margin-bottom: clamp(10px, 2vw, 14px);
     color: #ff9a56;
     flex-shrink: 0;
 }
@@ -653,9 +656,9 @@ body {
 .about-text {
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 12px;
+    margin-bottom: clamp(8px, 2vw, 12px);
     flex: 1;
-    font-size: 0.88rem;
+    font-size: clamp(0.8rem, 1.8vw, 0.88rem);
     overflow: hidden;
 }
 
@@ -663,9 +666,9 @@ body {
 .skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: clamp(4px, 1vw, 6px);
     margin-top: auto;
-    margin-bottom: 8px;
+    margin-bottom: clamp(6px, 1.5vw, 8px);
     flex-shrink: 0;
 }
 
@@ -673,9 +676,9 @@ body {
 .skill-tag {
     background: rgba(255, 154, 86, 0.35);
     border: 1.5px solid #ff9a56;
-    padding: 4px 8px;
+    padding: clamp(3px, 1vw, 4px) clamp(6px, 1.5vw, 8px);
     border-radius: 12px;
-    font-size: 0.75rem;
+    font-size: clamp(0.68rem, 1.5vw, 0.75rem);
     color: #ffb366;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -692,7 +695,7 @@ body {
 
 /* Jack of Trades Text */
 .jack-of-trades {
-    font-size: 0.72rem;
+    font-size: clamp(0.65rem, 1.4vw, 0.72rem);
     color: rgba(255, 255, 255, 0.6);
     text-align: center;
     font-style: italic;
@@ -707,25 +710,25 @@ body {
 .spotify-player {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 12px;
-    padding: 16px;
+    padding: clamp(12px, 2.5vw, 16px);
     border: 1px solid rgba(255, 154, 86, 0.1);
     flex: 1;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    gap: 12px;
+    gap: clamp(8px, 2vw, 12px);
 }
 
 .track-info {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: clamp(8px, 2vw, 12px);
     flex-shrink: 0;
 }
 
 .track-cover {
-    width: 52px;
-    height: 52px;
+    width: clamp(45px, 8vw, 52px);
+    height: clamp(45px, 8vw, 52px);
     background: linear-gradient(135deg, #ff9a56, #ff6b35);
     border-radius: 8px;
     display: flex;
@@ -746,8 +749,8 @@ body {
 }
 
 .play-button svg {
-    width: 20px;
-    height: 20px;
+    width: clamp(16px, 3vw, 20px);
+    height: clamp(16px, 3vw, 20px);
     fill: white;
     transition: all 0.3s ease;
 }
@@ -761,7 +764,7 @@ body {
     font-weight: 600;
     color: white;
     margin-bottom: 3px;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 1.7vw, 0.9rem);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -769,7 +772,7 @@ body {
 
 .track-artist {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -777,7 +780,7 @@ body {
 
 /* Motivational Section */
 .motivational-section {
-    padding: 10px;
+    padding: clamp(8px, 2vw, 10px);
     background: rgba(255, 154, 86, 0.05);
     border-radius: 8px;
     border-left: 2px solid #ff9a56;
@@ -785,7 +788,7 @@ body {
 }
 
 .motivational-text {
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
     line-height: 1.3;
     color: rgba(255, 255, 255, 0.8);
     font-style: italic;
@@ -814,7 +817,7 @@ body {
     height: 4px;
     border-radius: 2px;
     overflow: hidden;
-    margin-bottom: 8px;
+    margin-bottom: clamp(6px, 1.5vw, 8px);
 }
 
 .progress-fill {
@@ -831,8 +834,8 @@ body {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 8px;
-    height: 8px;
+    width: clamp(6px, 1.5vw, 8px);
+    height: clamp(6px, 1.5vw, 8px);
     background: white;
     border-radius: 50%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -841,7 +844,7 @@ body {
 .time-display {
     display: flex;
     justify-content: space-between;
-    font-size: 0.72rem;
+    font-size: clamp(0.65rem, 1.4vw, 0.72rem);
     color: rgba(255, 255, 255, 0.7);
     font-family: 'JetBrains Mono', monospace;
 }
@@ -849,7 +852,7 @@ body {
 /* Social Buttons */
 .social-buttons {
     display: flex;
-    gap: 15px;
+    gap: clamp(10px, 2.5vw, 15px);
     flex-direction: column;
     margin-top: auto;
     flex: 1;
@@ -859,18 +862,18 @@ body {
 .social-btn {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 18px 22px;
+    gap: clamp(8px, 2vw, 12px);
+    padding: clamp(14px, 3vw, 18px) clamp(16px, 3.5vw, 22px);
     background: rgba(255, 154, 86, 0.1);
     border: 1px solid rgba(255, 154, 86, 0.2);
     border-radius: 12px;
     text-decoration: none;
     color: white;
     font-weight: 500;
-    font-size: 1.05rem;
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
     transition: all 0.3s ease;
     justify-content: center;
-    min-height: 60px;
+    min-height: clamp(50px, 8vw, 60px);
 }
 
 .social-btn:hover {
@@ -889,8 +892,8 @@ body {
 }
 
 .social-btn svg {
-    width: 24px;
-    height: 24px;
+    width: clamp(20px, 4vw, 24px);
+    height: clamp(20px, 4vw, 24px);
     fill: currentColor;
     flex-shrink: 0;
 }
@@ -899,28 +902,45 @@ body {
     display: none;
 }
 
-/* Responsive Design */
+/* LAPTOP/TABLET RESPONSIVE (1024px to 768px) */
+@media (max-width: 1024px) {
+    .main-content {
+        gap: clamp(15px, 3vw, 30px);
+        padding: clamp(15px, 2.5vw, 25px);
+    }
+    
+    .bottom-panels {
+        max-width: 900px;
+        gap: clamp(12px, 2.5vw, 20px);
+    }
+    
+    .panel {
+        min-height: clamp(260px, 32vh, 300px);
+        max-height: clamp(260px, 32vh, 300px);
+    }
+}
+
+/* TABLET RESPONSIVE (768px and below) */
 @media (max-width: 768px) {
     .main-content {
-        padding: 25px 20px;
-        gap: 30px;
+        gap: clamp(20px, 4vw, 30px);
+        padding: clamp(20px, 4vw, 25px);
     }
     
     .bottom-panels {
         grid-template-columns: 1fr;
-        gap: 20px;
-        max-width: 380px;
+        gap: clamp(15px, 3vw, 20px);
+        max-width: 400px;
     }
     
     .panel {
-        padding: 20px;
-        min-height: 280px;
-        max-height: 280px;
+        min-height: clamp(240px, 30vh, 280px);
+        max-height: clamp(240px, 30vh, 280px);
+        padding: clamp(15px, 3vw, 20px);
     }
     
     .spotify-player {
-        padding: 14px;
-        gap: 10px;
+        gap: clamp(8px, 2vw, 10px);
     }
     
     .border-corner {
@@ -939,35 +959,74 @@ body {
         top: 45px;
         bottom: 45px;
     }
-    
-    .clean-header .main-title {
-        font-size: 3rem;
-    }
-    
-    .clean-header .subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .jack-of-trades {
-        font-size: 0.68rem;
-    }
 }
 
+/* MOBILE RESPONSIVE (480px and below) - SCROLLING ENABLED */
 @media (max-width: 480px) {
+    /* ENABLE SCROLLING ON MOBILE */
+    body {
+        overflow-y: auto !important; /* ENABLE SCROLL ON MOBILE */
+        height: auto !important;
+    }
+    
     .main-content {
-        padding: 20px 15px;
-        gap: 25px;
+        height: auto !important; /* REMOVE FIXED HEIGHT */
+        min-height: 100vh;
+        justify-content: flex-start !important; /* START FROM TOP */
+        padding: clamp(20px, 5vw, 30px) clamp(15px, 4vw, 20px);
+        gap: clamp(25px, 6vw, 35px);
+        overflow: visible !important; /* ALLOW OVERFLOW */
     }
     
-    .border-corner {
-        display: none;
+    .clean-header {
+        margin-bottom: clamp(20px, 5vw, 30px);
     }
     
+    .bottom-panels {
+        grid-template-columns: 1fr;
+        gap: clamp(20px, 5vw, 25px);
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .panel {
+        min-height: auto !important; /* REMOVE FIXED HEIGHT */
+        max-height: none !important;
+        padding: clamp(20px, 5vw, 25px);
+    }
+    
+    /* Hide border on mobile for cleaner look */
+    .border-corner,
     .border-line {
         display: none;
     }
     
+    /* Adjust particles for mobile */
+    .particles-container {
+        display: none; /* HIDE PARTICLES ON MOBILE FOR PERFORMANCE */
+    }
+    
+    .snowfall-container {
+        display: none; /* HIDE SNOWFALL ON MOBILE FOR PERFORMANCE */
+    }
+}
+
+/* VERY SMALL MOBILE (360px and below) */
+@media (max-width: 360px) {
+    .main-content {
+        padding: 15px 10px;
+        gap: 20px;
+    }
+    
     .clean-header .main-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    
+    .clean-header .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .jack-of-trades {
+        font-size: 0.6rem;
     }
 }

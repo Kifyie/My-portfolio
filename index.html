@@ -6,6 +6,22 @@
     <title>Kifyie's Tavern | Sunset Vibes</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Mobile Device Detection Script -->
+    <script>
+    (function() {
+        function isMobileDevice() {
+            return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                   (window.innerWidth <= 768 && 'ontouchstart' in window) ||
+                   /Mobile|Tablet/i.test(navigator.userAgent);
+        }
+        
+        // Redirect mobile users to mobile.html
+        if (isMobileDevice() && !window.location.pathname.includes('mobile.html')) {
+            window.location.href = './mobile.html';
+        }
+    })();
+    </script>
 </head>
 <body>
     <!-- Video Background - FILLS SCREEN -->
@@ -15,6 +31,7 @@
         </video>
         <div class="video-overlay"></div>
     </div>
+
 
     <!-- Sunset Snowfall Background -->
     <div class="snowfall-container">
@@ -40,6 +57,7 @@
         <div class="snowflake"></div>
     </div>
 
+
     <!-- Particle Background -->
     <div class="particles-container">
         <div class="particle"></div>
@@ -51,6 +69,7 @@
         <div class="particle"></div>
         <div class="particle"></div>
     </div>
+
 
     <!-- Beautiful Border Frame -->
     <div class="border-frame">
@@ -64,14 +83,16 @@
         <div class="border-line right"></div>
     </div>
 
+
     <!-- Main Content -->
     <main class="main-content">
         <!-- Clean Header Title -->
         <header class="clean-header">
-            <h1 class="main-title">Kifyie's Tavern.</h1>
-            <p class="subtitle">- Welcome to My Digital Safe Haven -</p>
+            <h1 class="main-title">Kifyie's Tavern</h1>
+            <p class="subtitle">Welcome to My Digital Safe Haven</p>
             <div class="title-underline"></div>
         </header>
+
 
         <!-- Bottom 3 Equal Panels Container -->
         <div class="bottom-panels">
@@ -97,6 +118,7 @@
                     </p>
                 </div>
             </section>
+
 
             <!-- Music Player Panel -->
             <section class="panel music-panel">
@@ -141,6 +163,7 @@
                 </div>
             </section>
 
+
             <!-- Social Panel -->
             <section class="panel social-panel">
                 <div class="panel-content">
@@ -159,13 +182,21 @@
                             </svg>
                             <span>Instagram</span>
                         </a>
+
+                        <!-- X (Twitter) Button -->
+                        <a href="https://x.com/Kifyiee" target="_blank" class="social-btn x-btn">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+                            </svg>
+                            <span>X (Twitter)</span>
+                        </a>
                     </div>
                 </div>
             </section>
         </div>
     </main>
 
+
     <script src="script.js"></script>
-    
 </body>
 </html>
